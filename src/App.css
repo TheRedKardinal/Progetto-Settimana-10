@@ -29,7 +29,18 @@ main {
 /* ***** NAVBAR ***** */
 .main-nav {
   margin-bottom: 20px;
-  background-color: #bd0025;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.08) 35%,
+      rgba(255, 255, 255, 0) 60%
+    ),
+    #2121a7de;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.5),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.15),
+    0 4px 10px rgba(0, 0, 0, 0.25);
   .navbar-brand {
     text-shadow: 1px 2px 1px lightslategray;
   }
@@ -80,7 +91,18 @@ main {
   margin: 0 auto;
   padding: 24px;
   border-radius: 10px;
-  background-color: #bd0026c8;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.08) 35%,
+      rgba(255, 255, 255, 0) 60%
+    ),
+    #bd0026c8;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.5),
+    inset 0 -6px 12px rgba(0, 0, 0, 0.15),
+    0 4px 10px rgba(0, 0, 0, 0.25);
   border: 1px solid #bd0025;
   text-align: center;
   display: flex;
@@ -158,7 +180,18 @@ main {
     width: 15%;
     padding: 10px;
     border-radius: 10px;
-    background-color: #bd0026c8;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0.08) 35%,
+        rgba(255, 255, 255, 0) 60%
+      ),
+      #bd0026c8;
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.5),
+      inset 0 -6px 12px rgba(0, 0, 0, 0.15),
+      0 4px 10px rgba(0, 0, 0, 0.25);
     border: 1px solid #bd0025;
     display: flex;
     flex-direction: column;
@@ -189,7 +222,14 @@ main {
 .main-footer {
   margin-top: 20px;
   padding: 16px;
-  background-color: rgb(78, 77, 77);
+  background:
+    linear-gradient(
+      235deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.08) 35%,
+      rgba(255, 255, 255, 0) 60%
+    ),
+    #2121a7de;
   color: white;
   text-align: center;
 }
