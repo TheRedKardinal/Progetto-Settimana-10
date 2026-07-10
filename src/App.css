@@ -7,8 +7,23 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-color: whitesmoke;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 /* ***** NAVBAR ***** */
@@ -104,4 +119,13 @@ body {
       color: white;
     }
   }
+}
+
+/* ***** FOOTER ***** */
+.main-footer {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: rgb(78, 77, 77);
+  color: white;
+  text-align: center;
 }
