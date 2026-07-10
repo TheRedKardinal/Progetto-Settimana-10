@@ -8,6 +8,7 @@ function FavoriteCityCard({ city, onSelect, onRemove, style }) {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [entered, setEntered] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -49,7 +50,12 @@ function FavoriteCityCard({ city, onSelect, onRemove, style }) {
   }
 
   return (
-    <div className="favorite-card" onClick={onSelect} style={style}>
+    <div
+      className={`favorite-card${entered ? " favorite-card--entered" : ""}`}
+      onClick={onSelect}
+      onAnimationEnd={() => setEntered(true)}
+      style={style}
+    >
       <button
         type="button"
         className="favorite-remove"

@@ -302,6 +302,11 @@ main {
     opacity: 0;
     animation: slide-in-left 0.5s ease both;
 
+    &.favorite-card--entered {
+      animation: none;
+      opacity: 1;
+    }
+
     &:hover {
       transform: translateY(-2px);
     }
