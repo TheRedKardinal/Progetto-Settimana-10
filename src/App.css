@@ -147,6 +147,11 @@ main {
     align-items: center;
     justify-content: center;
     gap: 10px;
+
+    .weather-emoji {
+      font-size: 3.5rem;
+      line-height: 1;
+    }
   }
 
   .meteo-temp {
@@ -236,6 +241,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .weather-emoji {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
   }
 
   .day-temp {
@@ -277,6 +287,8 @@ main {
     color: white;
     cursor: pointer;
     transition: transform 0.2s ease;
+    opacity: 0;
+    animation: slide-in-left 0.5s ease both;
 
     &:hover {
       transform: translateY(-2px);
@@ -292,6 +304,11 @@ main {
     display: flex;
     align-items: center;
     gap: 8px;
+
+    .weather-emoji {
+      font-size: 2rem;
+      line-height: 1;
+    }
   }
 
   .favorite-temp {

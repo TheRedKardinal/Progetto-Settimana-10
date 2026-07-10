@@ -21,12 +21,13 @@ function FavoritesPage({ favorites, onSelectCity, onRemoveFavorite }) {
 
   return (
     <section className="favorites-page">
-      {favorites.map((city) => (
+      {favorites.map((city, index) => (
         <FavoriteCityCard
           key={city}
           city={city}
           onSelect={() => handleSelect(city)}
           onRemove={() => onRemoveFavorite(city)}
+          style={{ animationDelay: `${index * 0.2}s` }}
         />
       ))}
     </section>

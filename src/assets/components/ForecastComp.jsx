@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { getWeatherEmoji } from "../utils/weatherIcons";
 
 const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 const BASE_URL = import.meta.env.VITE_OPENWEATHER_BASE_URL;
@@ -77,10 +78,13 @@ function ForecastComp({ city }) {
         >
           <p className="day-name">{formatDayName(day.dt)}</p>
           <div className="day-weather">
-            <img
-              src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`}
-              alt={day.weather[0].description}
-            />
+            <span
+              className="weather-emoji"
+              role="img"
+              aria-label={day.weather[0].description}
+            >
+              {getWeatherEmoji(day.weather[0].icon)}
+            </span>
             <p className="day-temp">{Math.round(day.main.temp)}°C</p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
@@ -8,11 +8,13 @@ import japanFlag from "../img/JapanFlag.png";
 
 function NavbarComp({ onSearch }) {
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
     if (query.trim()) {
       onSearch(query.trim());
+      navigate("/");
     }
   }
 

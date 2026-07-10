@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { getWeatherEmoji } from "../utils/weatherIcons";
 
 const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 const BASE_URL = import.meta.env.VITE_OPENWEATHER_BASE_URL;
 
-function FavoriteCityCard({ city, onSelect, onRemove }) {
+function FavoriteCityCard({ city, onSelect, onRemove, style }) {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -48,7 +49,7 @@ function FavoriteCityCard({ city, onSelect, onRemove }) {
   }
 
   return (
-    <div className="favorite-card" onClick={onSelect}>
+    <div className="favorite-card" onClick={onSelect} style={style}>
       <button
         type="button"
         className="favorite-remove"
@@ -66,10 +67,13 @@ function FavoriteCityCard({ city, onSelect, onRemove }) {
       {weather && (
         <>
           <div className="favorite-weather">
-            <img
-              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-              alt={weather.weather[0].description}
-            />
+            <span
+              className="weather-emoji"
+              role="img"
+              aria-label={weather.weather[0].description}
+            >
+              {getWeatherEmoji(weather.weather[0].icon)}
+            </span>
             <div>
               <p className="favorite-temp">
                 {Math.round(weather.main.temp)}°C

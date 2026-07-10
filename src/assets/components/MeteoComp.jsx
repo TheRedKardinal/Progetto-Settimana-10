@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { getWeatherEmoji } from "../utils/weatherIcons";
 
 const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 const BASE_URL = import.meta.env.VITE_OPENWEATHER_BASE_URL;
@@ -61,7 +62,6 @@ function MeteoComp({ city, favorites = [], onToggleFavorite }) {
     return null;
   }
 
-  const iconUrl = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
   const isFavorite = favorites.includes(weather.name);
 
   return (
@@ -83,7 +83,13 @@ function MeteoComp({ city, favorites = [], onToggleFavorite }) {
       </div>
 
       <div className="meteo-main">
-        <img src={iconUrl} alt={weather.weather[0].description} />
+        <span
+          className="weather-emoji"
+          role="img"
+          aria-label={weather.weather[0].description}
+        >
+          {getWeatherEmoji(weather.weather[0].icon)}
+        </span>
         <p className="meteo-temp">{Math.round(weather.main.temp)}°C</p>
       </div>
 
