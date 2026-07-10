@@ -1,18 +1,38 @@
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import japanFlag from "../img/JapanFlag.png";
 
-function NavbarComp() {
+function NavbarComp({ onSearch }) {
+  const [query, setQuery] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (query.trim()) {
+      onSearch(query.trim());
+    }
+  }
+
   return (
     <>
       <Navbar data-bs-theme="light" className="main-nav">
         <Container fluid>
-          <Navbar.Brand href="#home">Meteo Japan 🇯🇵</Navbar.Brand>
-          <Form.Group>
-            <Form.Control type="text" placeholder="Cerca località" />
-          </Form.Group>
+          <Navbar.Brand href="#home">
+            Meteo Japan{" "}
+            <img src={japanFlag} alt="Bandiera Giappone" height="20" />
+          </Navbar.Brand>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group>
+              <Form.Control
+                type="text"
+                placeholder="Cerca città in Giappone..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+            </Form.Group>
+          </Form>
           <Nav>
             <Nav.Link href="#home" className="nav-link">
               Home

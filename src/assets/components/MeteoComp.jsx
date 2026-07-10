@@ -66,13 +66,29 @@ function MeteoComp({ city }) {
   return (
     <section id="today-meteo" className="meteo-card">
       <h2>{weather.name}, Giappone</h2>
-      <img src={iconUrl} alt={weather.weather[0].description} />
-      <p className="meteo-temp">{Math.round(weather.main.temp)}°C</p>
+
+      <div className="meteo-main">
+        <img src={iconUrl} alt={weather.weather[0].description} />
+        <p className="meteo-temp">{Math.round(weather.main.temp)}°C</p>
+      </div>
+
       <p className="meteo-desc">{weather.weather[0].description}</p>
+
       <ul className="meteo-details">
-        <li>Percepita: {Math.round(weather.main.feels_like)}°C</li>
-        <li>Umidità: {weather.main.humidity}%</li>
-        <li>Vento: {weather.wind.speed} m/s</li>
+        <li className="meteo-stat">
+          <span className="meteo-stat-label">Percepita</span>
+          <span className="meteo-stat-value">
+            {Math.round(weather.main.feels_like)}°C
+          </span>
+        </li>
+        <li className="meteo-stat">
+          <span className="meteo-stat-label">Umidità</span>
+          <span className="meteo-stat-value">{weather.main.humidity}%</span>
+        </li>
+        <li className="meteo-stat">
+          <span className="meteo-stat-label">Vento</span>
+          <span className="meteo-stat-value">{weather.wind.speed} m/s</span>
+        </li>
       </ul>
     </section>
   );

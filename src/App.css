@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: whitesmoke;
 }
 
 /* ***** NAVBAR ***** */
@@ -23,6 +23,85 @@ body {
     transition: background-color 0.6s ease;
     &:hover {
       background-color: rgba(245, 245, 245, 0.492);
+    }
+  }
+}
+
+/* ***** METEO ***** */
+.meteo-status {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.meteo-error {
+  color: #ff8c8c;
+}
+
+.meteo-card {
+  width: 70%;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 10px;
+  background-color: #bd0026c8;
+  border: 1px solid #bd0025;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  h2 {
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .meteo-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .meteo-temp {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+  }
+
+  .meteo-desc {
+    text-transform: capitalize;
+    color: #eee;
+    margin-bottom: 10px;
+  }
+
+  .meteo-details {
+    list-style: none;
+    padding: 16px 0 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+
+    .meteo-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .meteo-stat-label {
+      font-size: 0.8rem;
+      color: #eee;
+      opacity: 0.85;
+    }
+
+    .meteo-stat-value {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: white;
     }
   }
 }
