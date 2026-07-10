@@ -51,6 +51,18 @@ main {
       background-color: rgba(245, 245, 245, 0.492);
     }
   }
+  .nav-search {
+    background-color: whitesmoke;
+    border: none;
+    color: #212529;
+    &::placeholder {
+      color: #6c757d;
+    }
+    &:focus {
+      background-color: white;
+      box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.4);
+    }
+  }
 }
 
 /* ***** METEO ***** */

@@ -20,7 +20,7 @@ function NavbarComp({ onSearch }) {
 
   return (
     <>
-      <Navbar data-bs-theme="light" className="main-nav">
+      <Navbar data-bs-theme="dark" className="main-nav">
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
             Meteo Japan{" "}
@@ -30,6 +30,7 @@ function NavbarComp({ onSearch }) {
             <Form.Group>
               <Form.Control
                 type="text"
+                className="nav-search"
                 placeholder="Cerca città in Giappone..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
