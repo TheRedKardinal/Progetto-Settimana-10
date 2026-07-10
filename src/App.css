@@ -218,6 +218,29 @@ main {
   }
 }
 
+/* ***** NEWS ***** */
+.news-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 60px 20px;
+  text-align: center;
+
+  .news-spinner {
+    width: 3rem;
+    height: 3rem;
+    color: #bd0025;
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #444;
+  }
+}
+
 /* ***** FOOTER ***** */
 .main-footer {
   margin-top: 20px;

@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import NavbarComp from "./assets/components/NavbarComp";
-import MeteoComp from "./assets/components/MeteoComp";
-import ForecastComp from "./assets/components/ForecastComp";
 import FooterComp from "./assets/components/FooterComp";
+import HomePage from "./assets/pages/HomePage";
+import NewsPage from "./assets/pages/NewsPage";
 
 function App() {
   const [city, setCity] = useState("Tokyo");
@@ -14,8 +15,10 @@ function App() {
         <NavbarComp onSearch={setCity} />
       </header>
       <main>
-        <MeteoComp city={city} />
-        <ForecastComp city={city} />
+        <Routes>
+          <Route path="/" element={<HomePage city={city} />} />
+          <Route path="/news" element={<NewsPage />} />
+        </Routes>
       </main>
       <FooterComp />
     </>

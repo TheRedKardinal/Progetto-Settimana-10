@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
@@ -19,7 +20,7 @@ function NavbarComp({ onSearch }) {
     <>
       <Navbar data-bs-theme="light" className="main-nav">
         <Container fluid>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand as={Link} to="/">
             Meteo Japan{" "}
             <img src={japanFlag} alt="Bandiera Giappone" height="20" />
           </Navbar.Brand>
@@ -34,13 +35,13 @@ function NavbarComp({ onSearch }) {
             </Form.Group>
           </Form>
           <Nav>
-            <Nav.Link href="#home" className="nav-link">
+            <Nav.Link as={Link} to="/" className="nav-link">
               Home
             </Nav.Link>
-            <Nav.Link href="#today-meteo" className="nav-link">
+            <Nav.Link as={Link} to="/" className="nav-link">
               Meteo Oggi
             </Nav.Link>
-            <Nav.Link href="news" className="nav-link">
+            <Nav.Link as={Link} to="/news" className="nav-link">
               News
             </Nav.Link>
           </Nav>
