@@ -13,6 +13,10 @@ dist-ssr
 *.local
 .env
 
+# Documentazione didattica generata
+GUIDA-CODICE.md
+GUIDA-CODICE.pdf
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
