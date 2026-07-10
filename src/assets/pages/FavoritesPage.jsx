@@ -12,9 +12,8 @@ function FavoritesPage({ favorites, onSelectCity, onRemoveFavorite }) {
   if (!favorites.length) {
     return (
       <section className="favorites-page">
-        <p className="meteo-status">
-          Nessuna città preferita salvata. Aggiungine una dalla card meteo con
-          la stella.
+        <p className="meteo-status text-black">
+          Nessuna città preferita salvata.
         </p>
       </section>
     );

@@ -64,13 +64,41 @@ function FavoriteCityCard({ city, onSelect, onRemove }) {
       {error && <p className="favorite-status meteo-error">N/D</p>}
 
       {weather && (
-        <div className="favorite-weather">
-          <img
-            src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-            alt={weather.weather[0].description}
-          />
-          <p className="favorite-temp">{Math.round(weather.main.temp)}°C</p>
-        </div>
+        <>
+          <div className="favorite-weather">
+            <img
+              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+              alt={weather.weather[0].description}
+            />
+            <div>
+              <p className="favorite-temp">
+                {Math.round(weather.main.temp)}°C
+              </p>
+              <p className="favorite-desc">{weather.weather[0].description}</p>
+            </div>
+          </div>
+
+          <ul className="favorite-details">
+            <li className="favorite-stat">
+              <span className="favorite-stat-label">Percepita</span>
+              <span className="favorite-stat-value">
+                {Math.round(weather.main.feels_like)}°C
+              </span>
+            </li>
+            <li className="favorite-stat">
+              <span className="favorite-stat-label">Umidità</span>
+              <span className="favorite-stat-value">
+                {weather.main.humidity}%
+              </span>
+            </li>
+            <li className="favorite-stat">
+              <span className="favorite-stat-label">Vento</span>
+              <span className="favorite-stat-value">
+                {weather.wind.speed} m/s
+              </span>
+            </li>
+          </ul>
+        </>
       )}
     </div>
   );

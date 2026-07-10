@@ -298,6 +298,36 @@ main {
     font-weight: 600;
   }
 
+  .favorite-desc {
+    text-transform: capitalize;
+    font-size: 0.85rem;
+    color: #eee;
+  }
+
+  .favorite-details {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  .favorite-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .favorite-stat-label {
+    font-size: 0.75rem;
+    color: #eee;
+    opacity: 0.85;
+  }
+
+  .favorite-stat-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
   .favorite-status {
     color: #eee;
   }
