@@ -64,7 +64,7 @@ function MeteoComp({ city }) {
   const iconUrl = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
 
   return (
-    <section id="today-meteo" className="meteo-card">
+    <section id="today-meteo" className="meteo-card" key={weather.name}>
       <h2>{weather.name}, Giappone</h2>
 
       <div className="meteo-main">

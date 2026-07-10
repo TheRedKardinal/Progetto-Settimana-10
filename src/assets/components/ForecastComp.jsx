@@ -69,8 +69,12 @@ function ForecastComp({ city }) {
 
   return (
     <section className="forecast-section">
-      {days.map((day) => (
-        <div className="day-card" key={day.dt}>
+      {days.map((day, index) => (
+        <div
+          className="day-card"
+          key={day.dt}
+          style={{ animationDelay: `${index * 0.2}s` }}
+        >
           <p className="day-name">{formatDayName(day.dt)}</p>
           <div className="day-weather">
             <img
