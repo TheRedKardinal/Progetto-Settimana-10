@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 const BASE_URL = import.meta.env.VITE_OPENWEATHER_BASE_URL;
 
-function MeteoComp({ city }) {
+function MeteoComp({ city, favorites = [], onToggleFavorite }) {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -62,10 +62,25 @@ function MeteoComp({ city }) {
   }
 
   const iconUrl = `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
+  const isFavorite = favorites.includes(weather.name);
 
   return (
     <section id="today-meteo" className="meteo-card" key={weather.name}>
-      <h2>{weather.name}, Giappone</h2>
+      <div className="meteo-header">
+        <h2>{weather.name}, Giappone</h2>
+        <button
+          type="button"
+          className={`favorite-star ${isFavorite ? "is-active" : ""}`}
+          onClick={() => onToggleFavorite(weather.name)}
+          aria-label={
+            isFavorite
+              ? `Rimuovi ${weather.name} dai preferiti`
+              : `Aggiungi ${weather.name} ai preferiti`
+          }
+        >
+          {isFavorite ? "★" : "☆"}
+        </button>
+      </div>
 
       <div className="meteo-main">
         <img src={iconUrl} alt={weather.weather[0].description} />

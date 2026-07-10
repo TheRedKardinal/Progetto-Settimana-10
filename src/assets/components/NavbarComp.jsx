@@ -38,8 +38,8 @@ function NavbarComp({ onSearch }) {
             <Nav.Link as={Link} to="/" className="nav-link">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/" className="nav-link">
-              Meteo Oggi
+            <Nav.Link as={Link} to="/preferiti" className="nav-link">
+              Preferiti
             </Nav.Link>
             <Nav.Link as={Link} to="/news" className="nav-link">
               News

@@ -1,10 +1,14 @@
 import MeteoComp from "../components/MeteoComp";
 import ForecastComp from "../components/ForecastComp";
 
-function HomePage({ city }) {
+function HomePage({ city, favorites, onToggleFavorite }) {
   return (
     <>
-      <MeteoComp city={city} />
+      <MeteoComp
+        city={city}
+        favorites={favorites}
+        onToggleFavorite={onToggleFavorite}
+      />
       <ForecastComp city={city} />
     </>
   );
