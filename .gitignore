@@ -11,7 +11,6 @@ node_modules
 dist
 dist-ssr
 *.local
-.env
 
 # Documentazione didattica generata
 GUIDA-CODICE.md
